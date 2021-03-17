@@ -24,5 +24,16 @@ function loginUser(userData) {
 function fetchPosts() {
   return instance.get('posts');
 }
-
+// 학습 노트 데이터를 조회하는 API
+function fetchPosts1() {
+  return instance.get('posts');
+}
+// 학습 노트 데이터를 조회하는 API
+function fetchPosts2() {
+  return instance.get('posts');
+}
+// 학습 노트 데이터를 조회하는 API
+function fetchPosts3() {
+  return instance.get('posts');
+}
 export { registerUser, loginUser, fetchPosts };
