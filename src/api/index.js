@@ -14,7 +14,7 @@ function createInstanceWithAuth(url) {
   });
   return setInterceptors(instance);
 }
+
 export const instance = createInstance();
 export const posts = createInstanceWithAuth('posts');
 
-export { registerUser, loginUser, fetchPosts };
