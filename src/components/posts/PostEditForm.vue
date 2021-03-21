@@ -14,7 +14,7 @@
             Contents length must be less than 200
           </p>
         </div>
-        <button type="submit" class="btn">Edit</button>
+        <button type="submit" class="btn" @click="submitForm">Edit</button>
       </form>
       <p class="log">
         {{ logMessage }}
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { fetchPost } from "../../api/posts";
+import { fetchPost, editPost } from "../../api/posts";
 
 export default {
   data() {
@@ -40,7 +40,19 @@ export default {
     },
   },
   methods: {
-    submitForm() {},
+    async submitForm() {
+      const id = this.$route.params.id;
+      try {
+        await editPost(id, {
+          title: this.title,
+          contents: this.contents,
+        });
+        this.$router.push("/main");
+      } catch (error) {
+        console.log(error);
+        this.logMessage = error;
+      }
+    },
   },
   async created() {
     const id = this.$route.params.id;
