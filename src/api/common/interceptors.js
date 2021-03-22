@@ -6,7 +6,6 @@ export function setInterceptors(instance) {
     function (config) {
       // Do something before request is sent
       // console.log(config);
-      console.log("asdasd");
       config.headers.Authorization = store.state.token;
       return config;
     },
