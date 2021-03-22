@@ -4,6 +4,7 @@ export function setInterceptors(instance) {
   // Add a request interceptor
   instance.interceptors.request.use(
     function (config) {
+      console.log("request");
       // Do something before request is sent
       // console.log(config);
       config.headers.Authorization = store.state.token;
@@ -18,6 +19,7 @@ export function setInterceptors(instance) {
   // Add a response interceptor
   instance.interceptors.response.use(
     function (response) {
+      console.log("response");
       // Any status code that lie within the range of 2xx cause this function to trigger
       // Do something with response data
       return response;

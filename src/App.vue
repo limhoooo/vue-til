@@ -15,11 +15,11 @@ export default {
     AppHeader,
   },
   watch: {
-    $route(to, from) {
-      if (to.path != from.path) {
-        console.log("라우터이동감지");
-      }
-    },
+    // $route(to, from) {
+    //   if (to.path != from.path) {
+    //     console.log("라우터이동감지");
+    //   }
+    // },
   },
 };
 </script>

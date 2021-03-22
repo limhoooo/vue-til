@@ -9,12 +9,7 @@ import {
 import { loginUser } from '@/api/auth';
 
 Vue.use(Vuex);
-const getDefaultState = () => {
-  return {
-    username: getUserFromCookie() || '',
-    token: getAuthFromCookie() || '',
-  }
-}
+
 export default new Vuex.Store({
   state: {
     username: getUserFromCookie() || '',
